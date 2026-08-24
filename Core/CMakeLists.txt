@@ -1,3 +1,8 @@
+set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
+set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
+set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
+add_subdirectory(vendor/GLFW)
+
 add_library(Core STATIC
     src/Application/Application.cpp
     src/Application/pch.cpp
@@ -19,18 +24,16 @@ target_include_directories(Core PUBLIC
     vendor/Glad/include
     vendor/imgui
     vendor/stb_image
+    vendor/glm
+    vendor/spdlog/include
 )
 
-target_link_libraries(Core PUBLIC 
-    glfw 
-    glm::glm 
-    spdlog::spdlog 
-    assimp::assimp
-)
+target_link_libraries(Core PUBLIC glfw)
 
 target_precompile_headers(Core PRIVATE src/Application/pch.h)
 
 target_compile_definitions(Core PUBLIC 
+    SPDLOG_COMPILED_LIB=0
     ENABLE_ASSERTS
     $<$<CONFIG:Debug>:_DEBUG>
     $<$<CONFIG:Release>:_RELEASE>
