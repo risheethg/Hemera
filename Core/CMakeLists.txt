@@ -4,8 +4,8 @@ set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
 add_subdirectory(vendor/GLFW)
 
 add_library(Core STATIC
-    src/Application/Application.cpp
-    src/Application/pch.cpp
+    #src/Application/Application.cpp
+    #src/Application/pch.cpp
     # ... list your other Core .cpp files here ...
     
     # Vendored dependencies compiled directly into Core

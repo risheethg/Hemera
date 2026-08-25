@@ -1,0 +1,55 @@
+# =========================
+# CMake & Build Directories
+# =========================
+# Ignore the default folders where Visual Studio and CMake put compiled files
+out/
+build/
+bin/
+bin-int/
+
+# Ignore CMake generated cache and temp files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps/
+
+# =========================
+# Visual Studio
+# =========================
+.vs/
+*.user
+*.suo
+*.sln.docstates
+*.db
+*.opendb
+*.vc.db
+
+# =========================
+# Compiled Binaries & Objects
+# =========================
+*.exe
+*.dll
+*.lib
+*.pdb
+*.exp
+*.ilk
+*.obj
+*.o
+*.a
+
+# =========================
+# Package Managers
+# =========================
+# Keeping this here in case you pull in OpenCV via vcpkg later
+vcpkg_installed/
+.vcpkg/
+
+# =========================
+# OS Generated
+# =========================
+Thumbs.db
+Desktop.ini
+.DS_Store
