@@ -16,7 +16,10 @@ add_library(Core STATIC
     vendor/imgui/imgui_widgets.cpp
     vendor/imgui/backends/imgui_impl_glfw.cpp
     vendor/imgui/backends/imgui_impl_opengl3.cpp
-)
+    src/Core.cpp
+    src/Core.h
+    src/EntryPoint.h
+ "src/Include.h")
 
 target_include_directories(Core PUBLIC
     src
@@ -30,7 +33,7 @@ target_include_directories(Core PUBLIC
 
 target_link_libraries(Core PUBLIC glfw)
 
-target_precompile_headers(Core PRIVATE src/Application/pch.h)
+#target_precompile_headers(Core PRIVATE src/Application/pch.h)
 
 target_compile_definitions(Core PUBLIC 
     SPDLOG_COMPILED_LIB=0

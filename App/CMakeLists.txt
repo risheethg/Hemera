@@ -1,5 +1,5 @@
 add_executable(App
-    src/main.cpp
+    src/App.cpp
 )
 
 target_link_libraries(App PRIVATE 
